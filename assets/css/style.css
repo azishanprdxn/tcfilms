@@ -302,7 +302,7 @@ header .flex-container .hamburger:hover {
   width: 77%;
   height: 584px;
   position: relative;
-  background: url("/assets/images/Video-1568x882.jpg") no-repeat center;
+  background: url("./../../images/Video-1568x882.jpg") no-repeat center;
   background-size: cover;
 }
 @media only screen and (max-width: 995px) {
