@@ -10,7 +10,7 @@
         width: 77%;
         height: 584px;
         position: relative;
-        background: url('./../../../assets/images/Video-1568x882.jpg') no-repeat center;
+        background: $grey url('./../../assets/images/Video-1568x882.jpg') no-repeat center;
         background-size: cover;
 
         @include responsive($notebook) {
