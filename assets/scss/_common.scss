@@ -1,8 +1,44 @@
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 92%; 
   margin: 0 auto;
 }
 
 img { width: auto; }
+
+.play-btn {
+  padding: 6px 24px;
+  border: 1px solid $white;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  left: 0;
+  color: $white;
+  font-size: 48px;
+  cursor: pointer;
+
+  span { @include translate(4px, 0); }
+
+  &:hover {
+    color: $active;
+    border-color: $active;
+  }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #454545;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $active;
+}
