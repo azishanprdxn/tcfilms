@@ -138,11 +138,11 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #454545;
+  background: #e0e0e1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #454545;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -161,7 +161,12 @@ header .flex-container {
   flex-wrap: wrap;
 }
 header .flex-container nav {
-  width: 75%;
+  width: 80%;
+}
+@media only screen and (max-width: 768px) {
+  header .flex-container nav {
+    width: 100%;
+  }
 }
 header .flex-container nav figure {
   width: 234px;
@@ -175,8 +180,37 @@ header .flex-container nav .nav-links {
   display: inline-block;
   vertical-align: middle;
 }
+@media only screen and (max-width: 1024px) {
+  header .flex-container nav .nav-links {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .flex-container nav .nav-links {
+    display: none;
+    padding-top: 50px;
+    margin-bottom: -40px;
+    -webkit-transform: translate(0, -40px);
+    -ms-transform: translate(0, -40px);
+    transform: translate(0, -40px);
+  }
+  header .flex-container nav .nav-links:hover {
+    display: block;
+  }
+}
 header .flex-container nav .nav-links li {
   padding: 0 24px;
+}
+@media only screen and (max-width: 1024px) {
+  header .flex-container nav .nav-links li {
+    padding: 0 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .flex-container nav .nav-links li {
+    margin: 12px 0;
+    display: block;
+  }
 }
 header .flex-container nav .nav-links li a.active {
   color: #90d2f8;
@@ -188,10 +222,15 @@ header .flex-container nav .nav-links li a:hover:not(.active) {
   text-decoration: underline;
 }
 header .flex-container .socials {
-  width: 25%;
+  width: 20%;
   margin: auto 0;
   text-align: end;
   vertical-align: middle;
+}
+@media only screen and (max-width: 768px) {
+  header .flex-container .socials {
+    display: none;
+  }
 }
 header .flex-container .socials ul {
   margin-top: -8px;
@@ -224,11 +263,29 @@ header .flex-container .socials .language a.active {
   color: #000;
 }
 header .flex-container .hamburger {
+  display: none;
   position: absolute;
   right: 48px;
-  top: 30px;
+  top: 42px;
+  cursor: pointer;
   font-size: 24px;
-  display: none;
+  z-index: 1;
+}
+@media only screen and (max-width: 425px) {
+  header .flex-container .hamburger {
+    right: 24px;
+  }
+}
+header .flex-container .hamburger:hover {
+  color: #90d2f8;
+}
+@media only screen and (max-width: 768px) {
+  header .flex-container .hamburger {
+    display: block;
+  }
+  header .flex-container .hamburger:hover + .nav-links {
+    display: block;
+  }
 }
 
 .banner .wrapper {
@@ -248,6 +305,16 @@ header .flex-container .hamburger {
   background: url("/assets/images/Video-1568x882.jpg") no-repeat center;
   background-size: cover;
 }
+@media only screen and (max-width: 995px) {
+  .banner .wrapper .flex-container .flexbox-left {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner .wrapper .flex-container .flexbox-left {
+    height: 650px;
+  }
+}
 .banner .wrapper .flex-container .flexbox-left .content {
   position: absolute;
   top: 82px;
@@ -263,12 +330,27 @@ header .flex-container .hamburger {
   font-size: 20px;
   line-height: 1.65;
 }
+@media only screen and (max-width: 768px) {
+  .banner .wrapper .flex-container .flexbox-left .content p {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .banner .wrapper .flex-container .flexbox-left .content p {
+    width: 100%;
+  }
+}
 .banner .wrapper .flex-container .flexbox-left .play-btn {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 425px) {
+  .banner .wrapper .flex-container .flexbox-left .play-btn {
+    margin-top: 150px;
+  }
 }
 .banner .wrapper .flex-container .flexbox-left .share {
   position: absolute;
@@ -297,6 +379,12 @@ header .flex-container .hamburger {
   height: 584px;
   background-color: #454545;
   overflow: auto;
+}
+@media only screen and (max-width: 995px) {
+  .banner .wrapper .flex-container .flexbox-right {
+    width: 100%;
+    height: auto;
+  }
 }
 .banner .wrapper .flex-container .flexbox-right figure {
   margin: 16px 14px;
@@ -327,6 +415,16 @@ header .flex-container .hamburger {
 }
 .films .flex-container .flexbox {
   width: 33.33%;
+}
+@media only screen and (max-width: 995px) {
+  .films .flex-container .flexbox {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .films .flex-container .flexbox {
+    width: 100%;
+  }
 }
 .films .flex-container .flexbox .content {
   margin: 24px 34px;
@@ -387,6 +485,17 @@ footer .flex-container .collabs {
   text-align: center;
   font-weight: 600;
 }
+@media only screen and (max-width: 995px) {
+  footer .flex-container .collabs {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .collabs {
+    width: 100%;
+    border-right: none;
+  }
+}
 footer .flex-container .collabs figure {
   width: 90%;
   padding: 12px 0;
@@ -400,9 +509,30 @@ footer .flex-container .site-links {
   margin: 42px 0;
   margin-right: -1px;
 }
+@media only screen and (max-width: 995px) {
+  footer .flex-container .site-links {
+    width: 50%;
+    border-right: none;
+  }
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .site-links {
+    width: 100%;
+  }
+}
 footer .flex-container .site-links ul {
   display: inline-block;
   margin: 0 24px;
+}
+@media only screen and (max-width: 1024px) {
+  footer .flex-container .site-links ul {
+    margin-left: 72px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .site-links ul {
+    margin-left: 0;
+  }
 }
 footer .flex-container .site-links ul li {
   display: block;
@@ -420,19 +550,45 @@ footer .flex-container .site-links ul li a.active {
 footer .flex-container .site-links ul:first-of-type {
   margin-left: 72px;
 }
+@media only screen and (max-width: 425px) {
+  footer .flex-container .site-links ul:first-of-type {
+    margin-left: 24px;
+  }
+}
 footer .flex-container .socials {
   width: 23%;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   margin: 42px 0;
   margin-right: -1px;
 }
+@media only screen and (max-width: 995px) {
+  footer .flex-container .socials {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .socials {
+    width: 100%;
+    border-right: none;
+  }
+}
 footer .flex-container .socials h4 {
   margin-left: 72px;
   font-weight: 600;
 }
+@media only screen and (max-width: 425px) {
+  footer .flex-container .socials h4 {
+    margin-left: 24px;
+  }
+}
 footer .flex-container .socials ul {
   padding: 12px 0;
   margin-left: 72px;
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .socials ul {
+    margin-left: 24px;
+  }
 }
 footer .flex-container .socials ul li {
   margin: 16px 0;
@@ -458,18 +614,43 @@ footer .flex-container .contact-us {
   width: 26%;
   margin: 42px 0;
 }
+@media only screen and (max-width: 995px) {
+  footer .flex-container .contact-us {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .contact-us {
+    width: 100%;
+  }
+}
 footer .flex-container .contact-us h4 {
   margin-left: 72px;
   font-weight: 600;
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .contact-us h4 {
+    margin-left: 24px;
+  }
 }
 footer .flex-container .contact-us p {
   padding: 16px 0;
   margin-left: 72px;
   color: #454545;
 }
+@media only screen and (max-width: 425px) {
+  footer .flex-container .contact-us p {
+    margin-left: 24px;
+  }
+}
 footer .flex-container .contact-us a {
   margin-left: 72px;
   color: #454545;
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .contact-us a {
+    margin-left: 24px;
+  }
 }
 footer .flex-container .contact-us a span {
   padding: 4px;
@@ -484,6 +665,11 @@ footer .flex-container .contact-us a:hover {
 footer .flex-container .policies {
   width: 50%;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .policies {
+    width: 100%;
+  }
 }
 footer .flex-container .policies ul {
   padding: 30px 0;
@@ -505,6 +691,13 @@ footer .flex-container .copyright {
   width: 50%;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   text-align: end;
+}
+@media only screen and (max-width: 425px) {
+  footer .flex-container .copyright {
+    width: 100%;
+    border-right: none;
+    text-align: start;
+  }
 }
 footer .flex-container .copyright p {
   padding: 30px 0;
