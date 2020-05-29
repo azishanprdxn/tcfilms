@@ -7,15 +7,11 @@ header {
     @include wrap;
 
     nav {
-      width: 75%;
+      width: 80%;
 
-      // @include responsive($desktop) {
-      //   width: 70%;
-      // }
-      
-      // @include responsive($notebook) {
-      //   width: 100%;
-      // }
+      @include responsive($tablet) {
+        width: 100%;
+      }
 
       figure {
         width: 234px;
@@ -29,12 +25,32 @@ header {
         display: inline-block;
         vertical-align: middle;
 
+        @include responsive($desktop) {
+          margin-left: 0;
+        }
+        
+        @include responsive($tablet) {
+          display: none;
+          padding-top: 50px;
+          margin-bottom: -40px;
+          @include translate(0, -40px);
+
+          &:hover { display: block; }
+        }
+
         li {
           padding: 0 24px;
 
-          a.active {
-            color: $active;
+          @include responsive($desktop) {
+            padding: 0 16px;
           }
+
+          @include responsive($tablet) {
+            margin: 12px 0;
+            display: block;
+          }
+
+          a.active { color: $active; }
 
           a {
             text-transform: uppercase;
@@ -48,50 +64,43 @@ header {
     }
 
     .socials {
-      width: 25%;
+      width: 20%;
       margin: auto 0;
       text-align: end;
       vertical-align: middle;
 
-      // @include responsive($desktop) {
-      //   width: 30%;
-      // }
-      
-      // @include responsive($notebook) {
-      //   display: none;
-      // }
-
+      @include responsive($tablet) {
+        display: none;
+      }
+ 
       ul {
         margin-top: -8px;
 
         li {
           padding: 2px 6px;
-          border: 1px solid #979799;
+          border: 1px solid $darkgrey;
           border-radius: 50%;
           margin: 0 3px;
           vertical-align: middle;
 
           a {
             padding: 2px;
-            color: #979799;
+            color: $darkgrey;
 
-            &:hover {
-              color: $active;
-            }
+            &:hover { color: $active; }
           }
         }
       }
 
       .language {
         margin-top: 12px;
-        font-size: 14px;
+        font-size: $small;
 
         a {
-          color: #979799;
+          color: $darkgrey;
+
           &:hover {
-            &:not(.active) {
-              text-decoration: underline;
-            }
+            &:not(.active) { text-decoration: underline; }
           }
         }
 
@@ -100,11 +109,25 @@ header {
     }
 
     .hamburger {
+      display: none;
       position: absolute;
       right: 48px;
-      top: 30px;
-      font-size: 24px;
-      display: none;
+      top: 42px;
+      cursor: pointer;
+      font-size: $medium-large;
+      z-index: 1;
+
+      @include responsive($mobile) {
+        right: 24px;
+      }
+
+      &:hover { color: $active; }
+
+      @include responsive($tablet) {
+        display: block;
+
+        &:hover + .nav-links { display: block; }
+      }
     }
   }
 }

@@ -15,7 +15,7 @@ img { width: auto; }
   top:0;
   left: 0;
   color: $white;
-  font-size: 48px;
+  font-size: $large;
   cursor: pointer;
 
   span { @include translate(4px, 0); }
@@ -27,18 +27,7 @@ img { width: auto; }
 }
 
 // Scrollbar
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #454545;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $active;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: $lightgrey; }
+::-webkit-scrollbar-thumb { background: $grey; }
+::-webkit-scrollbar-thumb:hover { background: $active; }

@@ -13,19 +13,35 @@
         background: url('/assets/images/Video-1568x882.jpg') no-repeat center;
         background-size: cover;
 
+        @include responsive($notebook) {
+          width: 100%;
+        }
+
+        @include responsive($tablet) {
+          height: 650px;
+        }
+
         .content {
           position: absolute;
           top: 82px;
           left: 68px;
           color: $white;
 
-          h2 { font-size: 66px; }
+          h2 { font-size: $x-large; }
 
           p {
             width: 40%;
             padding-top: 34px;
-            font-size: 20px;
+            font-size: $medium;
             line-height: 1.65;
+
+            @include responsive($tablet) {
+              width: 80%;
+            }
+            
+            @include responsive($mobile) {
+              width: 100%;
+            }
           }
         }
 
@@ -33,6 +49,10 @@
           top: 50%;
           left: 50%;
           @include translate(-50%, -50%);
+
+          @include responsive($mobile) {
+            margin-top: 150px;
+          }
         }
 
         .share {
@@ -64,16 +84,18 @@
       .flexbox-right {
         width: 23%;
         height: 584px;
-        background-color: #454545;
+        background-color: $grey;
         overflow: auto;
+
+        @include responsive($notebook) {
+          width: 100%;
+          height: auto;
+        }
 
         figure {
           margin: 16px 14px;
           img { width: 100%; }
-
-          &:first-of-type {
-            position: relative;
-          }
+          &:first-of-type { position: relative; }
 
           .play-btn {
             top: 50%;
