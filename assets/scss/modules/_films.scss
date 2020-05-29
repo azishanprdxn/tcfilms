@@ -1,0 +1,56 @@
+.films {
+  padding: 92px 12px;
+
+  .flex-container {
+    @include flex;
+    @include wrap;
+
+    .flexbox {
+      width: 33.33%;
+
+      .content {
+        margin: 24px 34px;
+
+        figure {
+          position: relative;
+
+          img { max-width: 100%; }
+
+          .play-btn {
+            top: 50%;
+            left: 50%;
+            @include translate(-50%, -50%);
+          }
+        }
+
+        h3 {
+          padding: 24px 0 6px 0;
+          font-size: 34px;
+          font-weight: $bold;
+        }
+
+        p {
+          padding-bottom: 24px;
+          color: #454545;
+          font-size: 20px;
+          line-height: 1.65;
+        }
+
+        .view-details {
+          padding: 12px 24px;
+          border-radius: 24px;
+          background-color: #34adf2;
+          color: $white;
+          text-transform: uppercase;
+
+          &:hover {
+            border: 2px solid #34adf2;
+            margin: -2px;
+            color: #34adf2;
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
